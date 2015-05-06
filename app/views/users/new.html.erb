@@ -1,0 +1,51 @@
+<!--
+
+<form action="/users" method="post" accept-charset="UTF-8" >
+
+	<input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>" />
+
+	<label for="user_username">Name</label>
+	<input type="text" name="user[username]" id="user_username" />
+
+	<label for="user_email">Email</label>
+	<input type="text" name="user[email]" id="user_email" />
+
+	<label for="user_password">Password</label>
+	<input type="password" name="user[password]" id="user_password" />	
+
+	<input type="submit" value="Create" />
+</form>
+-->
+
+<%# ----------BEGIN COMMENT----------%>
+<% if false %>
+	<%= form_tag('/users', method: "post") do %>
+		<%= label_tag(:username, "Name") %>
+		<%= text_field_tag(:username) %>
+
+		<%= label_tag(:email, "Email") %>
+		<%= text_field_tag(:email) %>
+
+		<%= label_tag(:password, "Password") %>
+		<%= password_field_tag(:password) %>
+
+		<%= submit_tag("Create") %>
+	<% end %>
+<% end %>
+<%# ----------END COMMENT------------%>
+
+<%= form_for @user do |f| %>
+	<%= f.label :username, value: "Your username here" %>
+	<%= f.text_field :username, value: "username" %>
+
+	<%= f.label :email %>
+	<%= f.text_field :email %>
+
+	<%= f.label :password %>
+	<%= f.password_field :password %>
+
+	<%= f.submit %>
+<% end %>
+
+
+
