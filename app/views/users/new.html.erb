@@ -17,22 +17,9 @@
 </form>
 -->
 
-<%# ----------BEGIN COMMENT----------%>
-<% if false %>
-	<%= form_tag('/users', method: "post") do %>
-		<%= label_tag(:username, "Name") %>
-		<%= text_field_tag(:username) %>
 
-		<%= label_tag(:email, "Email") %>
-		<%= text_field_tag(:email) %>
 
-		<%= label_tag(:password, "Password") %>
-		<%= password_field_tag(:password) %>
-
-		<%= submit_tag("Create") %>
-	<% end %>
-<% end %>
-<%# ----------END COMMENT------------%>
+<%= render "application/flash_partial" if !flash.empty? %>
 
 <%= form_for @user do |f| %>
 	<%= f.label :username, value: "Your username here" %>
